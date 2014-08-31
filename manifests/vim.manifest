@@ -1,0 +1,4 @@
+file {
+    source  "files/vim/vimrc"
+    target  "$HOME/.vimrc"
+}

@@ -1,0 +1,3 @@
+[submodule "SALVE"]
+	path = SALVE
+	url = git@github.com:sirosen/SALVE.git

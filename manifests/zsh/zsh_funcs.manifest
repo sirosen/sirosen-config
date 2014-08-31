@@ -1,0 +1,34 @@
+directory {
+    action  create
+    target  "$HOME/.myfuncs"
+}
+
+# base functions that are of general utility
+file {
+    source  "files/zsh/myfuncs/base.sh"
+    target  "$HOME/.myfuncs/base.sh"
+}
+
+# functions for setting up the machine (or re-initializing things)
+file {
+    source  "files/zsh/myfuncs/setup.sh"
+    target  "$HOME/.myfuncs/setup.sh"
+}
+
+# AWS configuration files
+file {
+    source  "files/zsh/myfuncs/aws.sh"
+    target  "$HOME/.myfuncs/aws.sh"
+}
+
+# git-specific functions that are not viable as git aliases
+file {
+    source  "files/zsh/myfuncs/git.sh"
+    target  "$HOME/.myfuncs/git.sh"
+}
+
+# vmware related functions for launching vms, handling kernel modules, &c
+file {
+    source  "files/zsh/myfuncs/vmware.sh"
+    target  "$HOME/.myfuncs/vmware.sh"
+}

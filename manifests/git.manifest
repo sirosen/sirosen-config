@@ -1,0 +1,9 @@
+file {
+    target  "$HOME/.global-gitignore"
+    source  "files/git/global-gitignore"
+}
+
+file {
+    target  "$HOME/.gitconfig"
+    source  "files/git/gitconfig"
+}

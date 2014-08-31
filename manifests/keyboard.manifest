@@ -1,0 +1,9 @@
+# remaps capslock to escape
+# only works when invoked as root
+file {
+    source  "files/input/keyboard"
+    target  "/etc/default/keyboard"
+    user    "root"
+    group   "root"
+    mode    644
+}

@@ -1,0 +1,28 @@
+file {
+    source  "files/zsh/zshrc"
+    target  "$HOME/.zshrc"
+}
+
+# makes zsh aware that it has been initialized
+file {
+    source  "files/zsh/zshrc.zni"
+    target  "$HOME/.zshrc.zni"
+}
+
+# define some handy aliases with completion that works
+# stuff like 'gst' = 'git status'
+file {
+    source  "files/zsh/zsh_git"
+    target  "$HOME/.zsh_git"
+}
+
+# set the dircolors for zsh (solarized, yo)
+file {
+    source  "files/zsh/zsh_dircolors"
+    target  "$HOME/.zsh_dircolors"
+}
+
+# put the zsh funcs in place
+manifest {
+    source  "manifests/zsh/zsh_funcs.manifest"
+}

@@ -1,0 +1,76 @@
+set nocompatible "Use vim mode, ffs
+" turn off filetype during plugin setup
+filetype off
+filetype plugin indent off
+
+if isdirectory($HOME.'/.vim/bundle/vundle')
+    " Use Vundle Plugins
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/vundle'
+    " File-Type Plugins
+    Plugin 'plasticboy/vim-markdown'
+    Plugin 'elzr/vim-json'
+    Plugin 'chrisbra/csv.vim'
+    " Linting pluins
+    Plugin 'scrooloose/syntastic'
+    " Coloration Plugins
+    Plugin 'altercation/vim-colors-solarized'
+    " Git plugins
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'bling/vim-airline'
+    " Utility plugins
+    Plugin 'scrooloose/nerdtree'
+endif
+
+if ($GOROOT != "")
+    " Add support for GO Lang highlighting
+    set runtimepath+=$GOROOT/misc/vim
+endif
+
+" Use solarized colorscheme
+if isdirectory($HOME.'/.vim/bundle/vim-colors-solarized')
+    set background=dark
+    let g:solarized_termtrans=1
+    colorscheme solarized
+endif
+
+" airline settings
+if isdirectory($HOME.'/.vim/bundle/vim-airline')
+    let g:airline_theme='dark'
+    set laststatus=2
+endif
+
+" Syntastic Setup
+if isdirectory($HOME.'/.vim/bundle/syntastic')
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_jump = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_aggregate_errors = 1
+    let g:syntastic_python_checkers = [ 'python', 'pep8' ]
+    let g:syntastic_ruby_checkers = [ ]
+endif
+
+
+" Remove trailing whitespace from code
+autocmd FileType c,cpp,java,php,ruby,python,markdown,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
+" and always highlight it in red while editing
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+$/
+
+" Soft tabs, 4-ist mode
+set tabstop=4 shiftwidth=4 expandtab
+" max width of 80 chars (PEP8 style)
+set wrap
+set textwidth=79
+" incremental search for ease
+set incsearch
+" show line position
+set ruler
+" turn plugins and indentation on (off for plugin setup)
+filetype plugin indent on
+syntax on

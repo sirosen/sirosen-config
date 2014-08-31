@@ -1,0 +1,5 @@
+# Proxy Autoconfig file, requires manual setup in browsers
+file {
+    source  "files/misc/PAC"
+    target  "$HOME/.mypac"
+}

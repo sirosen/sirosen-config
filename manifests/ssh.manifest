@@ -1,0 +1,10 @@
+directory {
+    action  create
+    mode    700
+    target  "$HOME/.ssh"
+}
+
+file {
+    source  "files/ssh/config"
+    target  "$HOME/.ssh/config"
+}

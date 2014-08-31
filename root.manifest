@@ -1,0 +1,27 @@
+manifest {
+    source  "manifests/vim.manifest"
+}
+
+manifest {
+    source  "manifests/zsh/zsh.manifest"
+}
+
+manifest {
+    source "manifests/globus.manifest"
+}
+
+manifest {
+    source "manifests/keyboard.manifest"
+}
+
+manifest {
+    source "manifests/ssh.manifest"
+}
+
+manifest {
+    source "manifests/misc.manifest"
+}
+
+manifest {
+    source "manifests/git.manifest"
+}

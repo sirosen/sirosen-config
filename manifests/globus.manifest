@@ -1,0 +1,13 @@
+# the tools directory holds some secret information, hence the 0700 perms
+directory {
+    target  "$HOME/.globus-tools"
+    mode    0700
+    action  create
+}
+
+# functions to be sourced by ~/.zshrc and ~/.bashrc
+file {
+    source  "files/globus/globus_funcs.sh"
+    target  "$HOME/.globus-tools/globus_funcs.sh"
+    mode    0600
+}
