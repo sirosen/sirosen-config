@@ -42,8 +42,14 @@ function adminpy () {
     globusenv-clear
 }
 
-function production-adminpy () {
-    globusenv-production
+function adminpy-transfer () {
+    globusenv-transfer
+    ~/.globus-tools/transfer-adminpy/admin.py "$@"
+    globusenv-clear
+}
+
+function adminpy-nexus () {
+    globusenv-nexus
     ~/.globus-tools/transfer-adminpy/admin.py "$@"
     globusenv-clear
 }
@@ -71,17 +77,26 @@ function globusenv-clear() {
 function globusenv-personal() {
     globusenv-clear
 
-    echo "Personal AWS Account Environment"
+    echo "Personal Account"
     export GLOBUS_ENV="Personal"
     source ~/.globus-tools/globus-env-personal.sh
     venv-activate ~/.globus-tools/adminpy-venv
 }
 
-function globusenv-production () {
+function globusenv-nexus() {
     globusenv-clear
 
-    echo "Production AWS Account Environment"
+    echo "Nexus/UX Account"
+    export GLOBUS_ENV="Nexus"
+    source ~/.globus-tools/globus-env-nexus.sh
+    venv-activate ~/.globus-tools/adminpy-venv
+}
+
+function globusenv-transfer() {
+    globusenv-clear
+
+    echo "Transfer Account"
     export GLOBUS_ENV="Production"
-    source ~/.globus-tools/globus-env-production.sh
+    source ~/.globus-tools/globus-env-transfer.sh
     venv-activate ~/.globus-tools/adminpy-venv
 }
