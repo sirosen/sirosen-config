@@ -14,6 +14,7 @@ if isdirectory($HOME.'/.vim/bundle/vundle')
     Plugin 'plasticboy/vim-markdown'
     Plugin 'elzr/vim-json'
     Plugin 'chrisbra/csv.vim'
+    Plugin 'sirosen/vim-salve'
     " Linting pluins
     Plugin 'scrooloose/syntastic'
     " Coloration Plugins
@@ -53,6 +54,7 @@ if isdirectory($HOME.'/.vim/bundle/syntastic')
     let g:syntastic_aggregate_errors = 1
     let g:syntastic_python_checkers = [ 'python', 'pep8' ]
     let g:syntastic_ruby_checkers = [ ]
+    let g:syntastic_tex_checkers = [ ]
 endif
 
 
