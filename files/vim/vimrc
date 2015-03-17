@@ -49,6 +49,11 @@ if isdirectory($HOME.'/.vim/bundle/vim-markdown')
     let g:vim_markdown_folding_disabled=1
 endif
 
+" vim-json settings
+if isdirectory($HOME.'/.vim/bundle/vim-json')
+    let g:vim_json_syntax_conceal = 0
+endif
+
 " Syntastic Setup
 if isdirectory($HOME.'/.vim/bundle/syntastic')
     let g:syntastic_check_on_open = 1

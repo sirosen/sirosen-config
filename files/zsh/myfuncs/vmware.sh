@@ -7,8 +7,16 @@ vmware-cli-launch () {
     disown
 }
 
-ivory-launch () {
-    vmware-cli-launch ivory
+pearl-launch () {
+    vmware-cli-launch pearl
+}
+
+mud-launch () {
+    vmware-cli-launch mud
+}
+
+platinum-launch () {
+    vmware-cli-launch platinum
 }
 
 midnight-launch () {

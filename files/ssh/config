@@ -1,34 +1,54 @@
+# key setup
+
 Host github.com
     IdentityFile /home/sirosen/.ssh/github
 
 Host *
-    IdentityFile /home/sirosen/.ssh/id_rsa
+    IdentityFile /home/sirosen/.ssh/id_ecdsa
     IdentityFile /home/sirosen/.ssh/globus_rsa
     IdentityFile /home/sirosen/.ssh/templar
+    IdentityFile /home/sirosen/.ssh/turgenev
     ServerAliveInterval 30
+
+
+# Globus aliases
 
 Host xfer-nagios.globus
     User        backdoor
     Hostname    184.73.208.171
-    Port        22
 
 Host xfer-nagios-backup.globus
     User        backdoor
     Hostname    ec2-184-72-36-11.us-west-1.compute.amazonaws.com
-    Port        22
-
-Host jenkins.globus
-    Hostname    jenkins.globuscs.info
-    Port        22
-
-Host sentry.globus
-    Hostname    sentry.globuscs.info
-    Port        22
-
-Host test-jenkins.globus
-    Hostname    test-jenkins.globuscs.info
-    Port        22
 
 Host cli.globus
     Hostname    cli.globusonline.org
-    Port        22
+
+# globuscs.info aliases
+
+Host monitor.gi
+    Hostname    monitor.globuscs.info
+Host jenkins.gi
+    Hostname    jenkins.globuscs.info
+Host sentry.gi
+    Hostname    sentry.globuscs.info
+Host sqlsandbox.gi
+    Hostname    sqlsandbox.globuscs.info
+Host sqltest.gi
+    Hostname    sqltest.globuscs.info
+Host sqlperf.gi
+    Hostname    sqlperftest.globuscs.info
+Host sandbox.gi
+    Hostname    sandbox.globuscs.info
+Host test.gi
+    Hostname    test.globuscs.info
+Host stage1.gi
+    Hostname    staging1.globuscs.info
+Host stage2.gi
+    Hostname    staging2.globuscs.info
+Host prod1.gi
+    Hostname    prod1.globuscs.info
+Host prod2.gi
+    Hostname    prod2.globuscs.info
+Host prod3.gi
+    Hostname    prod3.globuscs.info
