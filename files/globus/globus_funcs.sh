@@ -1,7 +1,3 @@
-function globus-deploy () {
-    ~/.globus-tools/go-ops/scripts/deploy/nexus-ux/deploy.sh "$@"
-}
-
 function globus-clone () {
     github-clone globusonline/"$1" "${@:2}"
 }
@@ -54,6 +50,12 @@ function adminpy-nexus () {
     globusenv-clear
 }
 
+function adminpy-demo () {
+    globusenv-demo
+    ~/.globus-tools/transfer-adminpy/admin.py "$@"
+    globusenv-clear
+}
+
 function globusenv-clear() {
     if [ -n "$VIRTUAL_ENV" ];
     then
@@ -98,5 +100,19 @@ function globusenv-transfer() {
     echo "Transfer Account"
     export GLOBUS_ENV="Production"
     source ~/.globus-tools/globus-env-transfer.sh
+    venv-activate ~/.globus-tools/adminpy-venv
+
+    local token_loc="/tmp/globus-mfa-token-$$"
+    ~/.globus-tools/transfer-adminpy/mfa_token.py > "$token_loc"
+    source "$token_loc"
+    rm -f "$token_loc"
+}
+
+function globusenv-demo() {
+    globusenv-clear
+
+    echo "Demo Account"
+    export GLOBUS_ENV="Demo"
+    source ~/.globus-tools/globus-env-demo.sh
     venv-activate ~/.globus-tools/adminpy-venv
 }
