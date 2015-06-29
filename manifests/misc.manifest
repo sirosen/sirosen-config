@@ -3,3 +3,16 @@ file {
     source  "files/misc/PAC"
     target  "$HOME/.mypac"
 }
+
+# XFCE Terminal Solarized Colors
+directory "$HOME/.config/xfce4/terminal/" {
+    action  create
+}
+file {
+    source  "files/misc/xfceTerminalSolarizedDark"
+    target  "$HOME/.config/xfce4/terminal/dark"
+}
+file {
+    source  "files/misc/xfceTerminalSolarizedLight"
+    target  "$HOME/.config/xfce4/terminal/light"
+}
