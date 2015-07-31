@@ -11,6 +11,7 @@ lgrep () {
 }
 
 source ~/.myfuncs/setup.sh
+source ~/.myfuncs/terminal.sh
 source ~/.myfuncs/aws.sh
 source ~/.myfuncs/git.sh
 source ~/.myfuncs/vmware.sh

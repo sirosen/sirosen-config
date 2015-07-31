@@ -38,4 +38,4 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 TabActivityColor=#dc322f
-
+FontName=Monospace 11

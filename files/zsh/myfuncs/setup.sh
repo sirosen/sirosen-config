@@ -11,16 +11,6 @@ magick-hostname-background-gnome3 () {
     gsettings set "org.gnome.desktop.background picture-options" "stretched"
 }
 
-solarized-terminal-setup () {
-    cp "$HOME/.config/xfce4/terminal/$1" "$HOME/.config/xfce4/terminal/terminalrc"
-}
-solarized-light-terminal-setup () {
-    solarized-terminal-setup light
-}
-solarized-dark-terminal-setup () {
-    solarized-terminal-setup dark
-}
-
 debian-install-shellcheck () {
     mkdir -p ~/bin;
     cd ~/bin;
