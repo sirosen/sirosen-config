@@ -9,6 +9,12 @@ file {
     target  "$HOME/.myfuncs/base.sh"
 }
 
+# setup terminal customizations
+file {
+    source  "files/zsh/myfuncs/terminal.sh"
+    target  "$HOME/.myfuncs/terminal.sh"
+}
+
 # functions for setting up the machine (or re-initializing things)
 file {
     source  "files/zsh/myfuncs/setup.sh"
