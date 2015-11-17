@@ -18,6 +18,10 @@ function nexus-auth () {
         https://nexus.api.globusonline.org/authenticate
 }
 
+function deploy-scriptdir-cd () {
+    cd ~/dev/globus/go-ops/products/nexus-and-web/deploy
+}
+
 
 # nagios access
 
@@ -52,6 +56,18 @@ function adminpy-nexus () {
 
 function adminpy-demo () {
     globusenv-demo
+    ~/.globus-tools/transfer-adminpy/admin.py "$@"
+    globusenv-clear
+}
+
+function adminpy-genomics () {
+    globusenv-genomics
+    ~/.globus-tools/transfer-adminpy/admin.py "$@"
+    globusenv-clear
+}
+
+function adminpy-genomics-dev () {
+    globusenv-genomics-dev
     ~/.globus-tools/transfer-adminpy/admin.py "$@"
     globusenv-clear
 }
@@ -114,5 +130,23 @@ function globusenv-demo() {
     echo "Demo Account"
     export GLOBUS_ENV="Demo"
     source ~/.globus-tools/globus-env-demo.sh
+    venv-activate ~/.globus-tools/adminpy-venv
+}
+
+function globusenv-genomics() {
+    globusenv-clear
+
+    echo "Genomics Prod Account"
+    export GLOBUS_ENV="Genomics"
+    source ~/.globus-tools/globus-env-genomics.sh
+    venv-activate ~/.globus-tools/adminpy-venv
+}
+
+function globusenv-genomics-dev() {
+    globusenv-clear
+
+    echo "Genomics Dev Account"
+    export GLOBUS_ENV="GenomicsDev"
+    source ~/.globus-tools/globus-env-genomics-dev.sh
     venv-activate ~/.globus-tools/adminpy-venv
 }

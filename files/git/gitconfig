@@ -8,16 +8,32 @@
 	username = sirosen
 [alias]
 	logpretty = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	issue-branch = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/issues/issue_branch.sh
-	issue-merge = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/issues/issue_merge.sh
-	issue-sign = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/issues/issue_sign.sh
-	release-tag = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/releases/release_tag.sh
-	release-notes = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/releases/release_notes.sh
-	globus-setup = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/git_setup.sh
-	jira-close = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/issues/jira_close.sh
-	make-prod-release = !bash /home/sirosen/.globus-tools/ci-dev-tools/git_tools/releases/make_prod_release.sh
+	diffsummary = diff origin/HEAD --summary
+	globus-setup = !bash /home/sirosen/.globus-tools/devtool/git_tools/git_setup.sh
+	issue-branch = !bash /home/sirosen/.globus-tools/devtool/git_tools/issues/issue_branch.sh
+	wip-branch = !bash /home/sirosen/.globus-tools/devtool/git_tools/issues/wip_branch.sh
+	wip-rebase = !bash /home/sirosen/.globus-tools/devtool/git_tools/issues/wip_rebase.sh
+	issue-merge = !bash /home/sirosen/.globus-tools/devtool/git_tools/issues/issue_merge.sh
+	issue-sign = !bash /home/sirosen/.globus-tools/devtool/git_tools/issues/issue_sign.sh
+	jira-close = !bash /home/sirosen/.globus-tools/devtool/git_tools/issues/jira_close.sh
+	release-branch = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/release_branch.sh
+	hotfix-branch = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/hotfix_branch.sh
+	release-tag = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/release_tag.sh
+	release-notes = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/release_notes.sh
+	make-prod-release = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/make_prod_release.sh
+	make-staging-release = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/make_staging_release.sh
+	get-current-rc = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/get_current_rc.sh
+	get-last-rc = !bash /home/sirosen/.globus-tools/devtool/git_tools/releases/get_last_rc.sh
+	list-prod-releases = !bash /home/sirosen/.globus-tools/devtool/git_tools/list/list_prod_releases.sh
+	list-staging-releases = !bash /home/sirosen/.globus-tools/devtool/git_tools/list/list_staging_releases.sh
+	list-rcs = !bash /home/sirosen/.globus-tools/devtool/git_tools/list/list_rcs.sh
+	list-rcs-include-legacy = !bash /home/sirosen/.globus-tools/devtool/git_tools/list/list_rcs_include_legacy.sh
+	list-hotfix-rcs = !bash /home/sirosen/.globus-tools/devtool/git_tools/list/list_hotfix_rcs.sh
 [color]
 	ui = true
 [globus]
 	prompt-on-push = true
 	gpg-key = 41E814C9
+	global-tools = true
+[push]
+	default = simple

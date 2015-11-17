@@ -20,3 +20,18 @@ alias gba='git branch -la'
 compdef _git gba=git-branch
 alias gco='git checkout'
 compdef _git gco=git-checkout
+
+#dogegit
+alias wow='git status'
+compdef _git wow=git-status
+alias very-push='git push'
+compdef _git very-push=git-push
+alias much-add='git add'
+compdef _git much-add=git-add
+alias so-rebase='git rebase'
+compdef _git so-rebase=git-rebase
+alias such-merge='git merge'
+compdef _git such-merge=git-merge
+
+#myfuncs
+compdef _git merge-base-diff=git-merge

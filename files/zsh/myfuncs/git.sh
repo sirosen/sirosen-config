@@ -11,3 +11,7 @@ remote-push () {
     fi
     git push -u "$r" "$br"
 }
+
+merge-base-diff () {
+    git diff "$(git merge-base HEAD "$1")"
+}

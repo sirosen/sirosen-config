@@ -3,11 +3,16 @@
 Host github.com
     IdentityFile /home/sirosen/.ssh/github
 
+Host *.globuscs.info
+    IdentityFile /home/sirosen/.ssh/globus_rsa
+Host *.gi
+    IdentityFile /home/sirosen/.ssh/globus_rsa
+
 Host *
     IdentityFile /home/sirosen/.ssh/id_ecdsa
     IdentityFile /home/sirosen/.ssh/globus_rsa
-    IdentityFile /home/sirosen/.ssh/templar
-    IdentityFile /home/sirosen/.ssh/turgenev
+#    IdentityFile /home/sirosen/.ssh/templar
+#    IdentityFile /home/sirosen/.ssh/turgenev
     ServerAliveInterval 30
 
 
@@ -26,29 +31,41 @@ Host cli.globus
 
 # globuscs.info aliases
 
-Host monitor.gi
-    Hostname    monitor.globuscs.info
-Host jenkins.gi
+Host nagios
+    Hostname    nagios.globuscs.info
+Host ossec
+    Hostname    ossec.globuscs.info
+Host logcollector
+    Hostname    ec2-54-162-106-228.compute-1.amazonaws.com
+Host jenkins
     Hostname    jenkins.globuscs.info
-Host sentry.gi
+Host sentry
     Hostname    sentry.globuscs.info
-Host sqlsandbox.gi
-    Hostname    sqlsandbox.globuscs.info
-Host sqltest.gi
-    Hostname    sqltest.globuscs.info
-Host sqlperf.gi
-    Hostname    sqlperftest.globuscs.info
-Host sandbox.gi
+Host sandbox
     Hostname    sandbox.globuscs.info
-Host test.gi
+Host test
     Hostname    test.globuscs.info
-Host stage1.gi
+Host stage1
     Hostname    staging1.globuscs.info
-Host stage2.gi
+Host stage2
     Hostname    staging2.globuscs.info
-Host prod1.gi
+Host prod1
     Hostname    prod1.globuscs.info
-Host prod2.gi
+Host prod2
     Hostname    prod2.globuscs.info
-Host prod3.gi
+Host prod3
     Hostname    prod3.globuscs.info
+
+Host authtest
+    Hostname    globusauthtest.globuscs.info
+Host authsandbox
+    Hostname    globusauthsandbox.globuscs.info
+
+# globusgenomics.org aliases
+
+Host nagios.gg
+    Hostname    nagios.ops.globusgenomics.org
+Host chef.gg
+    Hostname    chef-server.ops.globusgenomics.org
+Host pg1.gg
+    Hostname    pg1.globusgenomics.org
